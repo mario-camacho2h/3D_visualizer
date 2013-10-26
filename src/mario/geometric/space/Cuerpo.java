@@ -162,7 +162,7 @@ public class Cuerpo implements ClonableBody {
         if (crecer) {
             scalingMatrix.escalarEnElEspacio(1.2, 1.2, 1.2);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -171,7 +171,7 @@ public class Cuerpo implements ClonableBody {
         } else {
             scalingMatrix.escalarEnElEspacio(0.8, 0.8, 0.8);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -184,7 +184,7 @@ public class Cuerpo implements ClonableBody {
         if (crecer) {
             scalingMatrix.escalarEnElEspacio(1.2, 1, 1);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -193,7 +193,7 @@ public class Cuerpo implements ClonableBody {
         } else {
             scalingMatrix.escalarEnElEspacio(0.8, 1, 1);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -206,7 +206,7 @@ public class Cuerpo implements ClonableBody {
         if (crecer) {
             scalingMatrix.escalarEnElEspacio(1, 1.2, 1);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -215,7 +215,7 @@ public class Cuerpo implements ClonableBody {
         } else {
             scalingMatrix.escalarEnElEspacio(1, 0.8, 1);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -228,7 +228,7 @@ public class Cuerpo implements ClonableBody {
         if (crecer) {
             scalingMatrix.escalarEnElEspacio(1, 1, 1.2);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -237,7 +237,7 @@ public class Cuerpo implements ClonableBody {
         } else {
             scalingMatrix.escalarEnElEspacio(1, 1, 0.8);
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(scalingMatrix); //escala
@@ -287,7 +287,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionX();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala
@@ -297,7 +297,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(-Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionX();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala
@@ -311,7 +311,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionY();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala
@@ -321,7 +321,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(-Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionY();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala
@@ -335,7 +335,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionZ();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala
@@ -345,7 +345,7 @@ public class Cuerpo implements ClonableBody {
             rotationMatrix.setAngulo(-Math.abs(rotationMatrix.getAngulo()));
             rotationMatrix.establecerRotacionZ();
             Vertice aux = new Vertice(0, 0, 0);
-            aux.copiar(getCentroMasa());
+            aux.setValues(getCentroMasa());
             translationMatrix.trasladarEnElEspacio(-aux.getX(), -aux.getY(), -aux.getZ());
             aplicarMatriz(translationMatrix); //lleva al origen
             aplicarMatriz(rotationMatrix); //escala

@@ -13,17 +13,17 @@ public class Matrix {
 
     public Matrix(Vector v1, Vector v2, Vector v3, Vector v4) {
         valores = new double[4][4];
-        valores[0] = v1.getValores();
-        valores[1] = v2.getValores();
-        valores[2] = v3.getValores();
-        valores[3] = v4.getValores();
+        valores[0] = v1.getValues();
+        valores[1] = v2.getValues();
+        valores[2] = v3.getValues();
+        valores[3] = v4.getValues();
     }
 
     public Matrix(Vector v1, Vector v2, Vector v3) {
         valores = new double[4][4];
-        valores[0] = v1.getValores();
-        valores[1] = v2.getValores();
-        valores[2] = v3.getValores();
+        valores[0] = v1.getValues();
+        valores[1] = v2.getValues();
+        valores[2] = v3.getValues();
         double aux[] = {0, 0, 0, 1};
         valores[3] = aux;
     }
@@ -51,16 +51,16 @@ public class Matrix {
     }
 
     public void setValores(Vector v1, Vector v2, Vector v3, Vector v4) {
-        valores[0] = v1.getValores();
-        valores[1] = v2.getValores();
-        valores[2] = v3.getValores();
-        valores[3] = v4.getValores();
+        valores[0] = v1.getValues();
+        valores[1] = v2.getValues();
+        valores[2] = v3.getValues();
+        valores[3] = v4.getValues();
     }
 
     public void setValores(Vector v1, Vector v2, Vector v3) {
-        valores[0] = v1.getValores();
-        valores[1] = v2.getValores();
-        valores[2] = v3.getValores();
+        valores[0] = v1.getValues();
+        valores[1] = v2.getValues();
+        valores[2] = v3.getValues();
         double aux[] = {0, 0, 0, 1};
         valores[3] = aux;
     }

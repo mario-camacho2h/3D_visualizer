@@ -85,7 +85,7 @@ public class Pruebas {
         Cubo cu=new Cubo();
         cu.crearUnCuerpo();
         Vertice aux=new Vertice(0, 0, 0);
-        aux.copiar(cu.getCentroMasa());
+        aux.setValues(cu.getCentroMasa());
         mt.trasladarEnElEspacio(-aux.getX(),-aux.getY(),-aux.getZ());
         cu.aplicarMatriz(mt); //lleva al origen
         cu.aplicarMatriz(ms); //escala
