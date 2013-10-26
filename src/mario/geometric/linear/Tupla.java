@@ -1,6 +1,6 @@
 /*
  * [Graficacion por Computadora]
- * Project for University
+ * Project for U.M.S.S.
  */
 package mario.geometric.linear;
 
@@ -9,11 +9,11 @@ package mario.geometric.linear;
  * @author Mario Camacho
  */
 public abstract class Tupla {
+
     protected static final String POINT_FORMAT = "(x,y,z):(%s,%s,%s) %s";
     protected static final String TUPLA_FORMAT = "(x,y,z,w):(%s,%s,%s,%s)";
     protected static final String POINT_VALUE = "POINT";
     protected static final String VECTOR_VALUE = "VECTOR";
-
     private double values[];
 
     public Tupla(double x, double y, double z, double w) {
