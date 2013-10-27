@@ -5,7 +5,7 @@
  */
 package mario.geometric.matrix;
 
-import mario.geometric.commons.Axis;
+import mario.geometric.commons.AxisToWork;
 import mario.geometric.linear.Vector;
 
 /**
@@ -50,7 +50,7 @@ public class Rotation extends Matrix {
                 new Vector(0, 0, 1));
     }
 
-    public void setRotationAxis(Axis axis) {
+    public void setRotationAxis(AxisToWork axis) {
         switch (axis) {
             case X:
                 setRotationAxisAsX();

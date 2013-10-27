@@ -9,6 +9,7 @@ package mario.geometric.commons;
  *
  * @author Mario Camacho
  */
-public enum Axis {
-    X,Y,Z
+public enum AxisToWork {
+
+    X, Y, Z, ALL
 }

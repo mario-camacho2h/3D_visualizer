@@ -5,6 +5,7 @@
  */
 package mario.geometric.linear;
 
+import mario.geometric.matrix.Matrix;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -64,6 +65,46 @@ public class VectorTest {
         Vector expected = new Vector(0.5, 1, 1.5);
         Vector actual = new Vector(1, 2, 3);
         actual.dividedBy(2);
+
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void testMultiply() {
+        Vector expected = new Vector(1, 2, 3);
+        Vector vector = new Vector(1, 2, 3);
+        Matrix matrix = new Matrix(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
+        Vector actual = vector.multiply(matrix);
+
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void test2Multiply() {
+        Vector expected = new Vector(10, 13, 13);
+        Vector vector = new Vector(3, 2, 1);
+        Matrix matrix = new Matrix(new Vector(1, 3, 2), new Vector(2, 1, 3), new Vector(3, 2, 1));
+        Vector actual = vector.multiply(matrix);
+
+        assertTrue(expected.equals(actual));
+    }
+    
+    @Test
+    public void testMultiplyAndSet() {
+        Vector expected = new Vector(1, 2, 3);
+        Vector actual = new Vector(1, 2, 3);
+        Matrix matrix = new Matrix(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
+        actual.multiplyAndSet(matrix);
+
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void test2MultiplyAndSet() {
+        Vector expected = new Vector(10, 13, 13);
+        Vector actual = new Vector(3, 2, 1);
+        Matrix matrix = new Matrix(new Vector(1, 3, 2), new Vector(2, 1, 3), new Vector(3, 2, 1));
+        actual.multiplyAndSet(matrix);
 
         assertTrue(expected.equals(actual));
     }

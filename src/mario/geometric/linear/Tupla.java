@@ -75,37 +75,6 @@ public abstract class Tupla {
         }
     }
     
-    public Vertice multiply(Matrix matrix) {
-        double res[] = new double[4];
-        
-        res[0] = getX() * matrix.getValues()[0][0]
-                + getY() * matrix.getValues()[1][0]
-                + getZ() * matrix.getValues()[2][0]
-                + getW() * matrix.getValues()[3][0];
-        
-        res[1] = getX() * matrix.getValues()[0][1]
-                + getY() * matrix.getValues()[1][1]
-                + getZ() * matrix.getValues()[2][1]
-                + getW() * matrix.getValues()[3][1];
-        
-        res[2] = getX() * matrix.getValues()[0][2]
-                + getY() * matrix.getValues()[1][2]
-                + getZ() * matrix.getValues()[2][2]
-                + getW() * matrix.getValues()[3][2];
-        
-        res[3] = getX() * matrix.getValues()[0][3]
-                + getY() * matrix.getValues()[1][3]
-                + getZ() * matrix.getValues()[2][3]
-                + getW() * matrix.getValues()[3][3];
-        
-        return new Vertice(res[0], res[1], res[2], res[3]);
-    }
-    
-    public void multiplyAndSet(Matrix matrix) {
-        Vertice vertice = multiply(matrix);
-        setValues(vertice);
-    }
-    
     public void dividedBy(double k) {
         for (int i = 0; i < values.length; i++) {
             values[i] = values[i] / k;
