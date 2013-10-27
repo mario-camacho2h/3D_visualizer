@@ -58,4 +58,13 @@ public class VectorTest {
 
         assertTrue(expected.equals(actual));
     }
+
+    @Test
+    public void test2DividedBy() {
+        Vector expected = new Vector(0.5, 1, 1.5);
+        Vector actual = new Vector(1, 2, 3);
+        actual.dividedBy(2);
+
+        assertTrue(expected.equals(actual));
+    }
 }

@@ -39,7 +39,7 @@ public class Visualizador extends JFrame implements WindowListener,ActionListene
       timer.start();
       panel.setSize(1280,770);
       cube1=new Cubo();
-      cube1.crearUnCuerpo();
+      cube1.createVertices();
 
       addWindowListener(this);
       addKeyListener(this);
@@ -55,7 +55,7 @@ public class Visualizador extends JFrame implements WindowListener,ActionListene
       timer.start();
       panel.setSize(1280,770);
       cube1=(Cubo) new Cuerpo();
-      cube1.crearUnCuerpo();
+      cube1.createVertices();
 
       addWindowListener(this);
       addKeyListener(this);

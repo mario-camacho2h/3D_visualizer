@@ -9,67 +9,75 @@ import mario.geometric.linear.Vector;
  */
 public class Matrix {
 
-    private double valores[][];
+    private double values[][];
 
     public Matrix(Vector v1, Vector v2, Vector v3, Vector v4) {
-        valores = new double[4][4];
-        valores[0] = v1.getValues();
-        valores[1] = v2.getValues();
-        valores[2] = v3.getValues();
-        valores[3] = v4.getValues();
+        values = new double[4][4];
+        values[0] = v1.getValues();
+        values[1] = v2.getValues();
+        values[2] = v3.getValues();
+        values[3] = v4.getValues();
     }
 
     public Matrix(Vector v1, Vector v2, Vector v3) {
-        valores = new double[4][4];
-        valores[0] = v1.getValues();
-        valores[1] = v2.getValues();
-        valores[2] = v3.getValues();
-        double aux[] = {0, 0, 0, 1};
-        valores[3] = aux;
+        values = new double[4][4];
+        values[0] = v1.getValues();
+        values[1] = v2.getValues();
+        values[2] = v3.getValues();
+        values[3] = new Vector(0, 0, 0, 1).getValues();
     }
 
-    public void aplicar(Vertice v) {
-        double res[] = new double[4];
-        res[0] = v.getX() * valores[0][0] + v.getY() * valores[1][0] + v.getZ() * valores[2][0] + v.getW() * valores[3][0];
-        res[1] = v.getX() * valores[0][1] + v.getY() * valores[1][1] + v.getZ() * valores[2][1] + v.getW() * valores[3][1];
-        res[2] = v.getX() * valores[0][2] + v.getY() * valores[1][2] + v.getZ() * valores[2][2] + v.getW() * valores[3][2];
-        res[3] = v.getX() * valores[0][3] + v.getY() * valores[1][3] + v.getZ() * valores[2][3] + v.getW() * valores[3][3];
-        v.setX(res[0]);
-        v.setY(res[1]);
-        v.setZ(res[2]);
-        v.setW(res[3]);
+    public Vertice apply(Vertice vertex) {
+        double resp[] = new double[4];
+
+        resp[0] = vertex.getX() * values[0][0]
+                + vertex.getY() * values[1][0]
+                + vertex.getZ() * values[2][0]
+                + vertex.getW() * values[3][0];
+
+        resp[1] = vertex.getX() * values[0][1]
+                + vertex.getY() * values[1][1]
+                + vertex.getZ() * values[2][1]
+                + vertex.getW() * values[3][1];
+
+        resp[2] = vertex.getX() * values[0][2]
+                + vertex.getY() * values[1][2]
+                + vertex.getZ() * values[2][2]
+                + vertex.getW() * values[3][2];
+
+        resp[3] = vertex.getX() * values[0][3]
+                + vertex.getY() * values[1][3]
+                + vertex.getZ() * values[2][3]
+                + vertex.getW() * values[3][3];
+
+        return new Vertice(resp[0], resp[1], resp[2], resp[3]);
     }
 
-    public Vertice aplicar2(Vertice v) {
-        double res[] = new double[4];
-        res[0] = v.getX() * valores[0][0] + v.getY() * valores[1][0] + v.getZ() * valores[2][0] + v.getW() * valores[3][0];
-        res[1] = v.getX() * valores[0][1] + v.getY() * valores[1][1] + v.getZ() * valores[2][1] + v.getW() * valores[3][1];
-        res[2] = v.getX() * valores[0][2] + v.getY() * valores[1][2] + v.getZ() * valores[2][2] + v.getW() * valores[3][2];
-        res[3] = v.getX() * valores[0][3] + v.getY() * valores[1][3] + v.getZ() * valores[2][3] + v.getW() * valores[3][3];
-        Vertice resp = new Vertice(res[0], res[1], res[2], res[3]);
-        return resp;
+    public void applyAndSet(Vertice vertex) {
+        vertex.setValues(apply(vertex));
     }
 
-    public void setValores(Vector v1, Vector v2, Vector v3, Vector v4) {
-        valores[0] = v1.getValues();
-        valores[1] = v2.getValues();
-        valores[2] = v3.getValues();
-        valores[3] = v4.getValues();
+    public double[][] getValues() {
+        return values;
     }
 
-    public void setValores(Vector v1, Vector v2, Vector v3) {
-        valores[0] = v1.getValues();
-        valores[1] = v2.getValues();
-        valores[2] = v3.getValues();
-        double aux[] = {0, 0, 0, 1};
-        valores[3] = aux;
+    public void setValues(Vector v1, Vector v2, Vector v3) {
+        setValues(v1, v2, v3, new Vector(0, 0, 0, 1));
     }
 
+    public void setValues(Vector v1, Vector v2, Vector v3, Vector v4) {
+        values[0] = v1.getValues();
+        values[1] = v2.getValues();
+        values[2] = v3.getValues();
+        values[3] = v4.getValues();
+    }
+
+    @Override
     public String toString() {
         String cad = "Matriz:\n\t";
-        for (int i = 0; i < valores.length; i++) {
-            for (int j = 0; j < valores[0].length; j++) {
-                cad = cad + valores[i][j] + "\t";
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values[0].length; j++) {
+                cad = cad + values[i][j] + "\t";
             }
             cad = cad + "\n\t";
         }

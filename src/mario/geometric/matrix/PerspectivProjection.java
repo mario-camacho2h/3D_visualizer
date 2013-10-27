@@ -26,7 +26,7 @@ public class PerspectivProjection extends Matrix {
     }
 
     public void establecerProyX() {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 1 / distancia),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 0),
@@ -34,7 +34,7 @@ public class PerspectivProjection extends Matrix {
     }
 
     public void establecerProyY() {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 1 / distancia),
                 new Vector(0, 0, 1, 0),
@@ -42,7 +42,7 @@ public class PerspectivProjection extends Matrix {
     }
 
     public void establecerProyZ() {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 1 / distancia),
@@ -54,14 +54,14 @@ public class PerspectivProjection extends Matrix {
     }
 
     @Override
-    public void aplicar(Vertice v) {
-        super.aplicar(v);
+    public void applyAndSet(Vertice v) {
+        super.applyAndSet(v);
         v.dividedBy(v.getW());
     }
 
     @Override
-    public Vertice aplicar2(Vertice v) {
-        Vertice otro = super.aplicar2(v);
+    public Vertice apply(Vertice v) {
+        Vertice otro = super.apply(v);
         otro.dividedBy(otro.getW());
         return otro; //TESTEADO TODO OK!
     }

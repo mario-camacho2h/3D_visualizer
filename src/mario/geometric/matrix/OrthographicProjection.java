@@ -16,12 +16,12 @@ public class OrthographicProjection extends Matrix{
         super(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
     }
     public void establecerProyX(){
-        setValores(new Vector(0, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
+        setValues(new Vector(0, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
     }
     public void establecerProyY(){
-        setValores(new Vector(1, 0, 0), new Vector(0, 0, 0), new Vector(0, 0, 1));
+        setValues(new Vector(1, 0, 0), new Vector(0, 0, 0), new Vector(0, 0, 1));
     }
     public void establecerProyZ(){
-        setValores(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 0));
+        setValues(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 0));
     }
 }
