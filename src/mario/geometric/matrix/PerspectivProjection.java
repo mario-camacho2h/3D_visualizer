@@ -56,13 +56,13 @@ public class PerspectivProjection extends Matrix {
     @Override
     public void aplicar(Vertice v) {
         super.aplicar(v);
-        v.dividir(v.getW());
+        v.dividedBy(v.getW());
     }
 
     @Override
     public Vertice aplicar2(Vertice v) {
         Vertice otro = super.aplicar2(v);
-        otro.dividir(otro.getW());
+        otro.dividedBy(otro.getW());
         return otro; //TESTEADO TODO OK!
     }
 }

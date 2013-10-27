@@ -1,6 +1,7 @@
 /*
  * [Graficacion por Computadora]
- * Project for U.M.S.S.
+ * This was a University project
+ * U.M.S.S.
  */
 package mario.geometric.linear;
 
@@ -56,25 +57,25 @@ public abstract class Tupla {
         return values[3];
     }
 
+    public void setValues(Tupla tupla) {
+        for (int i = 0; i < values.length; i++) {
+            values[i] = tupla.getValues()[i];
+        }
+    }
+
     public double[] getValues() {
         return values;
     }
 
-    public void multiplicar(double k) {
+    public void multipliedBy(double k) {
         for (int i = 0; i < values.length; i++) {
             values[i] = values[i] * k;
         }
     }
 
-    public void dividir(double k) {
+    public void dividedBy(double k) {
         for (int i = 0; i < values.length; i++) {
             values[i] = values[i] / k;
-        }
-    }
-
-    public void setValues(Tupla tupla) {
-        for (int i = 0; i < values.length; i++) {
-            values[i] = tupla.getValues()[i];
         }
     }
 
@@ -89,5 +90,15 @@ public abstract class Tupla {
                 return String.format(TUPLA_FORMAT, values[0], values[1], values[2]);
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof Tupla) {
+            Tupla tupla = (Tupla) other;
+            return getX() == tupla.getX() && getY() == tupla.getY()
+                    && getZ() == tupla.getZ() && getW() == tupla.getW();
+        }
+        return false;
     }
 }

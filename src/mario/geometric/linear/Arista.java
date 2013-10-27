@@ -1,6 +1,7 @@
 /*
  * [Graficacion por Computadora]
- * Project for U.M.S.S.
+ * This was a University project
+ * U.M.S.S.
  */
 package mario.geometric.linear;
 
@@ -12,7 +13,7 @@ import java.awt.Graphics;
  */
 public class Arista {
 
-    Vertice init, end;
+    private Vertice init, end;
 
     public Arista(Vertice init, Vertice end) {
         this.init = init;

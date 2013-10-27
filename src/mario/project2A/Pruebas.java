@@ -68,9 +68,9 @@ public class Pruebas {
 
         /*System.out.println(mt.toString());
         Vector vm=new Vector(1, 2, 3);
-        vm.multiplicar(100);
+        vm.multipliedBy(100);
         System.out.println(vm.toString());
-        vm.dividir(10);
+        vm.dividedBy(10);
         System.out.println(vm.toString());*/
 
         PerspectivProjection mpp=new PerspectivProjection(30);

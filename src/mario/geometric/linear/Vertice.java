@@ -1,6 +1,7 @@
 /*
  * [Graficacion por Computadora]
- * Project for U.M.S.S.
+ * This was a University project
+ * U.M.S.S.
  */
 package mario.geometric.linear;
 
