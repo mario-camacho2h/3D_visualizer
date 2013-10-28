@@ -28,22 +28,22 @@ public class Pruebas {
         Vertice v=new Vertice(10, 20, 30);
 
         System.out.println(v.toString());
-        m.aplicar(v);
+        m.applyAndSet(v);
         System.out.println(v.toString());
-        k.aplicar(v);
+        k.applyAndSet(v);
         System.out.println(v.toString());
-        n.aplicar(v);
+        n.applyAndSet(v);
         System.out.println(v.toString());
-        m.setValores(new Vector(1, 1, 1), new Vector(1, 1, 1), new Vector(1, 1, 1));
-        m.aplicar(v);
+        m.setValues(new Vector(1, 1, 1), new Vector(1, 1, 1), new Vector(1, 1, 1));
+        m.applyAndSet(v);
         System.out.println(v.toString());
 
         OrthographicProjection mpo=new OrthographicProjection();
         mpo.establecerProyX();
-        mpo.aplicar(v);
+        mpo.applyAndSet(v);
         System.out.println(v.toString());
         mpo.establecerProyY();
-        mpo.aplicar(v);
+        mpo.applyAndSet(v);
         System.out.println(v.toString()); //Matriz de proyeccion ortografica OK
 
         v.setX(2);
@@ -53,24 +53,24 @@ public class Pruebas {
 
         Translation mt=new Translation();
         mt.trasladarEnX(5);
-        mt.aplicar(v);
+        mt.applyAndSet(v);
         System.out.println(v.toString());
         mt.trasladarEnElEspacio(-7, -3, -10);
-        mt.aplicar(v);
+        mt.applyAndSet(v);
         System.out.println(v.toString()); //Matriz de traslacion OK
 
         Rotation mr=new Rotation();
-        mr.establecerRotacionZ();
-        /*mr.aplicar(v);
+        mr.setRotationAxisAsZ();
+        /*mr.applyAndSet(v);
         System.out.println(v.toString());
-        mr.aplicar(v);
+        mr.applyAndSet(v);
         System.out.println(v.toString());*/ //Matriz de rotacion OK
 
         /*System.out.println(mt.toString());
         Vector vm=new Vector(1, 2, 3);
-        vm.multiplicar(100);
+        vm.multipliedBy(100);
         System.out.println(vm.toString());
-        vm.dividir(10);
+        vm.dividedBy(10);
         System.out.println(vm.toString());*/
 
         PerspectivProjection mpp=new PerspectivProjection(30);
@@ -83,9 +83,9 @@ public class Pruebas {
         System.out.println("COMENZAMOS CON LOS CUERPOS...para escalar y rotar llevar primero al origen");
 
         Cubo cu=new Cubo();
-        cu.crearUnCuerpo();
+        cu.createVertices();
         Vertice aux=new Vertice(0, 0, 0);
-        aux.copiar(cu.getCentroMasa());
+        aux.setValues(cu.getCentroMasa());
         mt.trasladarEnElEspacio(-aux.getX(),-aux.getY(),-aux.getZ());
         cu.aplicarMatriz(mt); //lleva al origen
         cu.aplicarMatriz(ms); //escala

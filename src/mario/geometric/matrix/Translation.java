@@ -17,7 +17,7 @@ public class Translation extends Matrix {
     }
 
     public void trasladarEnX(double dx) {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 0),
@@ -25,7 +25,7 @@ public class Translation extends Matrix {
     }
 
     public void trasladarEnY(double dy) {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 0),
@@ -33,7 +33,7 @@ public class Translation extends Matrix {
     }
 
     public void trasladarEnZ(double dz) {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 0),
@@ -41,7 +41,7 @@ public class Translation extends Matrix {
     }
 
     public void trasladarEnElEspacio(double dx, double dy, double dz) {
-        setValores(
+        setValues(
                 new Vector(1, 0, 0, 0),
                 new Vector(0, 1, 0, 0),
                 new Vector(0, 0, 1, 0),
