@@ -1,10 +1,11 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * [Graficacion por Computadora]
+ * This was a University project
+ * U.M.S.S.
  */
 package mario.geometric.matrix;
 
-import mario.geometric.matrix.Matrix;
+import mario.geometric.commons.AxisToWork;
 import mario.geometric.linear.Vector;
 
 /**
@@ -13,39 +14,53 @@ import mario.geometric.linear.Vector;
  */
 public class Rotation extends Matrix {
 
-    private double angulo;
+    private double angle;
 
     public Rotation() {
         super(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
-        angulo = Math.toRadians(6);
+        angle = Math.toRadians(6);
     }
 
-    public void setAngulo(double a) {
-        angulo = a;
+    public void setAngle(double angle) {
+        this.angle = angle;
     }
 
-    public double getAngulo() {
-        return angulo;
+    public double getAngle() {
+        return angle;
     }
 
-    public void establecerRotacionX() {
-        setValores(
+    public void setRotationAxisAsX() {
+        setValues(
                 new Vector(1, 0, 0),
-                new Vector(0, Math.cos(angulo), Math.sin(angulo)),
-                new Vector(0, -Math.sin(angulo), Math.cos(angulo)));
+                new Vector(0, Math.cos(angle), Math.sin(angle)),
+                new Vector(0, -Math.sin(angle), Math.cos(angle)));
     }
 
-    public void establecerRotacionY() {
-        setValores(
-                new Vector(Math.cos(angulo), 0, -Math.sin(angulo)),
+    public void setRotationAxisAsY() {
+        setValues(
+                new Vector(Math.cos(angle), 0, -Math.sin(angle)),
                 new Vector(0, 1, 0),
-                new Vector(Math.sin(angulo), 0, Math.cos(angulo)));
+                new Vector(Math.sin(angle), 0, Math.cos(angle)));
     }
 
-    public void establecerRotacionZ() {
-        setValores(
-                new Vector(Math.cos(angulo), Math.sin(angulo), 0),
-                new Vector(-Math.sin(angulo), Math.cos(angulo), 0),
+    public void setRotationAxisAsZ() {
+        setValues(
+                new Vector(Math.cos(angle), Math.sin(angle), 0),
+                new Vector(-Math.sin(angle), Math.cos(angle), 0),
                 new Vector(0, 0, 1));
+    }
+
+    public void setRotationAxis(AxisToWork axis) {
+        switch (axis) {
+            case X:
+                setRotationAxisAsX();
+                break;
+            case Y:
+                setRotationAxisAsY();
+                break;
+            case Z:
+                setRotationAxisAsZ();
+                break;
+        }
     }
 }

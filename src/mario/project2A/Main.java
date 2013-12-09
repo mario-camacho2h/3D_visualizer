@@ -1,3 +1,8 @@
+/*
+ * [Graficacion por Computadora]
+ * This was a University project
+ * U.M.S.S.
+ */
 package mario.project2A;
 
 import mario.geometric.plane.Poligono;
@@ -74,7 +79,7 @@ public class Main {
                 figura.getAristas().get(6), 
                 figura.getAristas().get(7)));
 
-        figura.setCentroMasa(2.5, 2.5, 2.5);
+        figura.setCentroMasa(new Vertice(2.5, 2.5, 2.5));
 
         System.out.println(figura.getPoligonos().get(4).toString());
     }

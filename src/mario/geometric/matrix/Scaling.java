@@ -4,7 +4,6 @@
  */
 package mario.geometric.matrix;
 
-import mario.geometric.matrix.Matrix;
 import mario.geometric.linear.Vector;
 
 /**
@@ -16,15 +15,15 @@ public class Scaling extends Matrix{
         super(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
     }
     public void escalarEnX(double sx){
-        setValores(new Vector(sx, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
+        setValues(new Vector(sx, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, 1));
     }
     public void escalarEnY(double sy){
-        setValores(new Vector(1, 0, 0), new Vector(0, sy, 0), new Vector(0, 0, 1));
+        setValues(new Vector(1, 0, 0), new Vector(0, sy, 0), new Vector(0, 0, 1));
     }
     public void escalarEnZ(double sz){
-        setValores(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, sz));
+        setValues(new Vector(1, 0, 0), new Vector(0, 1, 0), new Vector(0, 0, sz));
     }
     public void escalarEnElEspacio(double sx, double sy, double sz){
-        setValores(new Vector(sx, 0, 0), new Vector(0, sy, 0), new Vector(0, 0, sz));
+        setValues(new Vector(sx, 0, 0), new Vector(0, sy, 0), new Vector(0, 0, sz));
     }
 }
